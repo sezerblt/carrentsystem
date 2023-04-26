@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Order Detail {% endblock %}
+
+{% block body %}
+
+
+<div class ='col-sm-6 col-sm-offset-3'>
+  <strong><p style="color: red">Rezervasyonunuz başarıyla gerçekleşti.Rezervasyonunuzla ilgili olarak en kısa zamanda sizinle iletişime geçeceğiz.
+    Rezervasyon bilgileriniz aşağıdaki gibidir.
+  </p></strong>
+  <p class="list-group-item active">
+    <strong><span class="glyphicon glyphicon-tag"></span>Rezervasyon Detayı</strong>
+  </p>
+   <a href="" class="list-group-item"><strong>Araç Ad: </strong>{{detail.car_name}}</a>
+  <a href="" class="list-group-item"><strong>Müşteri: </strong>{{detail.employee_name}}</a>
+  <a href="" class="list-group-item"><strong>Telefon: </strong>{{detail.cell_no}}</a>
+  <a href="" class="list-group-item"><strong>Adres: </strong>{{detail.address}}</a>
+  <a href="" class="list-group-item"><strong>Nereden: </strong>{{detail.date}}</a>
+  <a href="" class="list-group-item"><strong>Nereye: </strong>{{detail.to}}</a>
+  <a href="" class="list-group-item"><strong>Sipariş No: </strong>{{detail.id}}</a><br>
+  <div class="pull-right">
+    <a href="{% url 'order_edit' detail.id %}"><button type="button" class="btn btn-info"><span class="glyphicon glyphicon-pencil"></span> REzervasyon  Detay</button></a>
+    <a href="{% url 'order_delete' detail.id %}"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-pencil"></span> Rezervasyon Çıkış</button></a>
+    <a href=""><button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Yazdir</button></a>
+
+  </div>
+</div>
+
+{% endblock %}
